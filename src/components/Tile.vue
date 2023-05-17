@@ -22,6 +22,29 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .tile {
   position: absolute;
   transition: 100ms ease-in-out;
@@ -49,6 +72,16 @@ defineProps({
     font-weight: 700;
     z-index: 10;
     font-size: 55px;
+
+    .tile-new & {
+      animation: appear 200ms ease 100ms;
+      animation-fill-mode: backwards;
+    }
+
+    .tile-merged & {
+      animation: pop 200ms ease 100ms;
+      animation-fill-mode: backwards;
+    }
   }
 
   @for $i from 1 to 11 {
