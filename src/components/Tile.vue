@@ -1,11 +1,13 @@
 <script setup lang="ts">
-defineProps({
-  value: Number,
-  row: Number,
-  col: Number,
-  isMerged: Boolean,
-  isNew: Boolean
-})
+interface Tile {
+  value: number
+  row: number
+  col: number
+  isMerged: boolean
+  isNew: boolean
+}
+
+defineProps<Tile>()
 </script>
 
 <template>
