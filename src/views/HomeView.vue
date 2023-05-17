@@ -1,5 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Game from '@/components/Game.vue'
+</script>
 
 <template>
-  <h1>home</h1>
+  <div class="container">
+    <Game />
+  </div>
 </template>
+
+<style scoped lang="scss">
+.container {
+  color: #776e65;
+}
+</style>
