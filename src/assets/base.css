@@ -42,7 +42,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
+    --color-background: var(--color-background);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
@@ -64,7 +64,7 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
+  /* color: var(--color-text); */
   background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;

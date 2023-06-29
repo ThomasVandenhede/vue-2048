@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface Grid {
+interface GridProps {
   size: number
 }
 
-withDefaults(defineProps<Grid>(), { size: 4 })
+withDefaults(defineProps<GridProps>(), { size: 4 })
 </script>
 
 <template>

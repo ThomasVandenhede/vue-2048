@@ -3,13 +3,20 @@ import Game from '@/components/Game.vue'
 </script>
 
 <template>
-  <div class="container">
-    <Game />
-  </div>
+  <h1>Welcome!</h1>
+  <nav>
+    <RouterLink :to="{ name: 'game' }">Vue.js 2048</RouterLink>
+    <RouterLink :to="{ name: 'about' }">About</RouterLink>
+  </nav>
 </template>
 
 <style scoped lang="scss">
-.container {
-  color: #776e65;
+nav {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    margin: 0.25rem 0;
+  }
 }
 </style>
