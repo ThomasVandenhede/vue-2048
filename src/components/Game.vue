@@ -7,8 +7,9 @@ import { useGameStore } from '@/stores/game'
 import { GRID_SIZE } from '@/constants'
 import { storeToRefs } from 'pinia'
 
-const { tiles } = storeToRefs(useGameStore())
-const { state, move, newGame } = useGameStore()
+const gameStore = useGameStore()
+const { tiles } = storeToRefs(gameStore)
+const { state, move, newGame } = gameStore
 const containerRef = ref<HTMLElement | null>(null)
 
 const forceReflow = (el: HTMLElement) => el.offsetHeight
@@ -67,7 +68,7 @@ onUnmounted(() => {
     <div><button @click="newGame()">New Game</button></div>
     <div class="scores-container">
       <div class="score-container">Score: {{ state.score }}</div>
-      <div class="best-container">Best: {{ state.score }}</div>
+      <!-- <div class="best-container">Best: {{ state.bestScore }}</div> -->
     </div>
     <div>{{ state.over ? 'Game Over!' : '' }}</div>
     <div>
