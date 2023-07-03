@@ -1,7 +1,7 @@
 export function getCssVariable(name: string) {
   const rootEl = document.querySelector(':root')
   if (rootEl !== null) {
-    var rootStyle = getComputedStyle(rootEl)
+    const rootStyle = getComputedStyle(rootEl)
     return rootStyle.getPropertyValue(name)
   }
   return ''

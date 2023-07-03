@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import Game from '@/components/Game.vue'
+import GameContainer from '@/components/GameContainer.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import Game from '@/components/Game.vue'
     <div>
       <RouterLink :to="{ name: 'home' }">← Home</RouterLink>
     </div>
-    <Game />
+    <GameContainer />
   </div>
 </template>
 

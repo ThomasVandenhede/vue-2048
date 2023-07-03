@@ -20,8 +20,8 @@ const vectorMap: VectorMap = {
 }
 
 export const useGameStore = defineStore('game', () => {
-  let id = ref(0)
-  let state = reactive<GameState>({
+  const id = ref(0)
+  const state = reactive<GameState>({
     score: 0,
     bestScore: 0,
     over: false,
@@ -79,7 +79,7 @@ export const useGameStore = defineStore('game', () => {
         const cell = { y, x }
         const tile: Tile | null = cellContent(cell)
         if (tile) {
-          for (let direction of ['up', 'down', 'left', 'right']) {
+          for (const direction of ['up', 'down', 'left', 'right']) {
             const vector = vectorMap[direction]
             const nextCell: Cell = {
               x: x + vector.x,

@@ -8,8 +8,8 @@ withDefaults(defineProps<GridProps>(), { size: 4 })
 
 <template>
   <div class="grid-container">
-    <div class="grid-row" v-for="i of Array.from({ length: size })">
-      <div class="grid-cell" v-for="j of Array.from({ length: size })"></div>
+    <div class="grid-row" v-for="(_, i) of Array.from({ length: size })" :key="i">
+      <div class="grid-cell" v-for="(_, j) of Array.from({ length: size })" :key="j"></div>
     </div>
   </div>
 </template>

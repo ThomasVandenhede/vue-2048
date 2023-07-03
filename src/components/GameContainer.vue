@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from 'vue'
-import Grid from './Grid.vue'
-import Tile from './Tile.vue'
+import { onMounted, onUnmounted, ref } from 'vue'
+import GameGrid from './GameGrid.vue'
+import GridTile from './GridTile.vue'
 import { setCssVariable } from '@/utils/cssVariable'
 import { useGameStore } from '@/stores/game'
 import { GRID_SIZE } from '@/constants'
@@ -40,16 +40,6 @@ const handleKeyDown = (event: KeyboardEvent) => {
   }
 }
 
-// watch(
-//   () => state,
-//   () => {
-//     console.log('watch', state)
-//   },
-//   {
-//     deep: true
-//   }
-// )
-
 onMounted(() => {
   setCssVariable('--grid-size', GRID_SIZE)
   window.addEventListener('keydown', handleKeyDown)
@@ -75,9 +65,9 @@ onUnmounted(() => {
       <strong>{{ state.won ? 'You WIN!' : '' }}</strong>
     </div>
     <div class="game-container">
-      <Grid :size="GRID_SIZE" />
+      <GameGrid :size="GRID_SIZE" />
       <div class="tile-container" ref="containerRef">
-        <Tile
+        <GridTile
           v-for="tile of tiles"
           :key="tile.id"
           :value="tile.value"
